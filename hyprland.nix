@@ -14,10 +14,10 @@
     ];
 
     home-manager.users.w = {
+        xdg.configFile."hypr/background.jpg".source = ./background.jpg;
+
         wayland.windowManager.hyprland = {
             enable = true;
-
-            xdg.configFile."background.jpg".source = ./background.jpg;
 
             settings = {
 
