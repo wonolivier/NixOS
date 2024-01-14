@@ -1,6 +1,11 @@
 { config, lib, pkgs, ... }:
 let nur = config.nur;
 in {
+    imports = [
+        ./hardware-configuration.nix
+        ./tuxedo.nix
+    ];
+
     nix.settings.experimental-features = [
         "nix-command"
         "flakes"
