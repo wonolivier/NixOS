@@ -20,6 +20,8 @@
                 modules = [
                     home-manager.nixosModules.default
                     nur.nixosModules.nur
+                    ./hardware-configuration.nix
+                    ./tuxedo.nix
                     ./configuration.nix
                 ];
             };
