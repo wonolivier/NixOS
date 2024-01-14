@@ -72,6 +72,7 @@ in {
         gnome.gnome-tweaks
         neofetch
         pcmanfm
+        swaybg
         vscode
         waybar
         wofi
@@ -125,6 +126,11 @@ in {
                 main = {
                     font = "Source Code Pro:size=10";
                 };
+                colors = {
+                    alpha = 0.9;
+                    foreground = "ffffff";
+                    background = "000000";
+                };
             };
         };
 
@@ -135,6 +141,7 @@ in {
 
                 exec-once = [
                     "${pkgs.waybar}/bin/waybar"
+                    "${pkgs.swaybg}/bin/swaybg -m stretch -i ~/nixos/background.jpg"
                 ];
 
                 monitor = ",preferred,auto,1";
@@ -259,9 +266,9 @@ in {
                     layer = "top";
                     position = "top";
 
-                    height = 30;
+                    height = 20;
 
-                    modules-left = [];
+                    modules-left = [ "hyprland/workspaces" ];
                     modules-center = [];
                     modules-right = [ "battery" "clock" ];
                 };
@@ -271,7 +278,9 @@ in {
             * {
                 border: none;
                 border-radius: 0;
-                font-family: Source Code Pro;
+                font-family: Cantarell;
+                font-size: 14px;
+                font-weight: bold;
             }
 
             window#waybar {
@@ -281,7 +290,7 @@ in {
 
             #battery,
             #clock {
-                margin: 0 10px;
+                margin: 0 5px;
             }
             '';
         };
