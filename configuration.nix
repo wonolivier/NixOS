@@ -220,7 +220,8 @@ in {
                 "$mod" = "SUPER";
                 bind = [
                     "$mod, C, killactive,"
-                    "$mod, F, exec, ${pkgs.firefox}/bin/firefox"
+                    "$mod, W, exec, ${pkgs.firefox}/bin/firefox"
+                    "$mod, F, fullscreen,"
                     "$mod, R, exec, ${pkgs.wofi}/bin/wofi --show drun"
                     "$mod, return, exec, ${pkgs.foot}/bin/foot"
                     "$mod SHIFT, e, exit,"
