@@ -133,6 +133,10 @@ in {
 
             settings = {
 
+                exec-once = [
+                    "${pkgs.waybar}/bin/waybar"
+                ];
+
                 monitor = ",preferred,auto,1";
 
                 input = {
@@ -246,6 +250,40 @@ in {
                     ublock-origin
                 ];
             };
+        };
+
+        programs.waybar = {
+            enable = true;
+            settings = {
+                mainBar = {
+                    layer = "top";
+                    position = "top";
+
+                    height = 30;
+
+                    modules-left = [];
+                    modules-center = [];
+                    modules-right = [ "battery" "clock" ];
+                };
+            };
+
+            style = ''
+            * {
+                border: none;
+                border-radius: 0;
+                font-family: Source Code Pro;
+            }
+
+            window#waybar {
+                background: #000;
+                color: #FFF;
+            }
+
+            #battery,
+            #clock {
+                margin: 0 10px;
+            }
+            '';
         };
 
         programs.vscode = {
