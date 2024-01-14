@@ -1,10 +1,7 @@
-{ config, lib, pkgs, specialArgs, ... }:
-let 
-    home-manager = specialArgs.home-manager;
-    unstable = specialArgs.unstable;
+{ config, lib, pkgs, ... }:
+let nur = config.nur;
 in {
     imports = [
-        (import "${home-manager}/nixos")
         ./hardware-configuration.nix
     ];
 
@@ -74,7 +71,9 @@ in {
         git
         gnome.gnome-tweaks
         neofetch
+        pcmanfm
         vscode
+        waybar
         wofi
     ];
 
@@ -226,16 +225,25 @@ in {
                         ])
                         []
                         {
-                        "1" = "ampersand";
-                        "2" = "eacute";
-                        "3" = "quotedbl";
-                        "4" = "apostrophe";
-                }
+                            "1" = "ampersand";
+                            "2" = "eacute";
+                            "3" = "quotedbl";
+                            "4" = "apostrophe";
+                        }
                 );
 
                 bindm = [
                     "$mod, mouse:272, movewindow"
                     "$mod, mouse:273, resizewindow"
+                ];
+            };
+        };
+
+        programs.firefox = {
+            enable = true;
+            profiles.w = {
+                extensions = with nur.repos.rycee.firefox-addons; [
+                    ublock-origin
                 ];
             };
         };
@@ -260,9 +268,10 @@ in {
                 gd = "git diff";
                 grs = "git restore --staged";
                 gs = "git status";
-                nrb = "sudo nixos-rebuild boot";
-                nrs = "sudo nixos-rebuild switch";
+                nrb = "sudo nixos-rebuild boot --flake ~/nixos";
+                nrs = "sudo nixos-rebuild switch --flake ~/nixos";
                 ngc = "sudo nix-collect-garbage -d";
+                nfc = "nix flake check";
             };
             oh-my-zsh = {
                 enable = true;
