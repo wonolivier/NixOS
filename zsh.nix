@@ -1,11 +1,9 @@
 { config, lib, pkgs, ... }: {
-    users.users.w = {
-        isNormalUser = true;
-        description = "w";
-        extraGroups = [ "networkmanager" "wheel" ];
-    };
-
     programs.zsh.enable = true;
+
+    users.users.w = {
+        shell = pkgs.zsh;
+    };
 
     home-manager.users.w = {
         programs.zsh = {
