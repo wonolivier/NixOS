@@ -23,7 +23,8 @@
 
                 exec-once = [
                     "${pkgs.waybar}/bin/waybar"
-                    "${pkgs.swaybg}/bin/swaybg -m stretch -i ~/nixos/background.jpg"
+                    # TODO: use a nix path
+                    "${pkgs.swaybg}/bin/swaybg -m stretch -i \"~/.config/hypr/background.jpg\""
                 ];
 
                 monitor = ",preferred,auto,1";
