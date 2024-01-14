@@ -167,7 +167,7 @@ in {
                     gaps_out = "5";
                     border_size = "1";
 
-                    "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+                    "col.active_border" = "rgba(ffffffee)";
                     "col.inactive_border" = "rgba(595959aa)";
 
                     layout = "master";
