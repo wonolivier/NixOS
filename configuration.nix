@@ -299,6 +299,7 @@ in {
         programs.vscode = {
             enable = true;
             extensions = with pkgs.vscode-extensions; [
+                jnoortheen.nix-ide
                 ms-ceintl.vscode-language-pack-fr
                 oderwat.indent-rainbow
             ];
