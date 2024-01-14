@@ -1,6 +1,4 @@
-{ config, lib, pkgs, ... }:
-let nur = config.nur;
-in {
+{ config, lib, pkgs, ... }: {
     imports = [
         ./common.nix
         ./hardware-configuration.nix

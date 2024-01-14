@@ -1,4 +1,7 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, ... }:
+let
+    nur = config.nur;
+in {
     environment.systemPackages = with pkgs; [
         firefox
     ];
