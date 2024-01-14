@@ -270,7 +270,7 @@ in {
 
                     modules-left = [ "hyprland/workspaces" ];
                     modules-center = [];
-                    modules-right = [ "battery" "clock" ];
+                    modules-right = [ "tray" "battery" "clock" ];
                 };
             };
 
