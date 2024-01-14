@@ -17,6 +17,8 @@
         wayland.windowManager.hyprland = {
             enable = true;
 
+            xdg.configFile."background.jpg".source = ./background.jpg;
+
             settings = {
 
                 exec-once = [
@@ -56,7 +58,7 @@
                 };
 
                 decoration = {
-                    rounding = 0;
+                    rounding = 5;
                     blur = {
                         enabled = true;
                         size = 3;
