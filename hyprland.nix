@@ -1,5 +1,17 @@
 { config, lib, pkgs, ... }: {
+
+    imports = [
+        ./firefox.nix
+        ./foot.nix
+        ./waybar.nix
+        ./wofi.nix
+    ];
+
     programs.hyprland.enable = true;
+
+    environment.systemPackages = with pkgs; [
+        swaybg
+    ];
 
     home-manager.users.w = {
         wayland.windowManager.hyprland = {

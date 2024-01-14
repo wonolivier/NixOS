@@ -22,16 +22,11 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-        firefox
-        foot
         git
         gnome.gnome-tweaks
         neofetch
         pcmanfm
-        swaybg
         vscode
-        waybar
-        wofi
     ];
 
     services.openssh.enable = true;
@@ -72,65 +67,6 @@ in {
             extraConfig = {
                 init.defaultBranch = "main";
             };
-        };
-
-        programs.foot = {
-            enable = true;
-            settings = {
-                main = {
-                    font = "Source Code Pro:size=10";
-                };
-                colors = {
-                    alpha = 0.9;
-                    foreground = "ffffff";
-                    background = "000000";
-                };
-            };
-        };
-
-        programs.firefox = {
-            enable = true;
-            profiles.w = {
-                extensions = with nur.repos.rycee.firefox-addons; [
-                    ublock-origin
-                ];
-            };
-        };
-
-        programs.waybar = {
-            enable = true;
-            settings = {
-                mainBar = {
-                    layer = "top";
-                    position = "top";
-
-                    height = 20;
-
-                    modules-left = [ "hyprland/workspaces" ];
-                    modules-center = [];
-                    modules-right = [ "tray" "battery" "clock" ];
-                };
-            };
-
-            style = ''
-            * {
-                border: none;
-                border-radius: 0;
-                font-family: Cantarell;
-                font-size: 14px;
-                font-weight: bold;
-            }
-
-            window#waybar {
-                background: #000;
-                color: #FFF;
-            }
-
-            #battery,
-            #clock {
-                margin: 0 5px;
-            }
-            '';
         };
 
         programs.vscode = {
