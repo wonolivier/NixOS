@@ -52,6 +52,26 @@
             #clock {
                 margin: 0 5px;
             }
+
+            #workspaces button {
+                padding: 0 5px;
+            }
+
+            #workspaces button.visible {
+                color: #FFF;
+            }
+
+            #workspaces button.empty {
+                color: #AAA;
+            }
+
+            #workspaces button.active {
+                color: #0F0;
+            }
+
+            #workspaces button.urgent {
+                color: #F00;
+            }
             '';
         };
     };
