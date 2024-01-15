@@ -20,6 +20,7 @@
     };
 
     environment.systemPackages = with pkgs; [
+        gammastep
         git
         neofetch
         pcmanfm
@@ -66,6 +67,17 @@
             font = {
                 name = "Cantarell";
                 size = 12;
+            };
+        };
+
+        services.gammastep = {
+            enable = true;
+            tray = true;
+            dawnTime = "8:00-8:05";
+            duskTime = "18:55-19:00";
+            temperature = {
+                day = 6500;
+                night = 4000;
             };
         };
 
