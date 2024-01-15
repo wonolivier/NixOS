@@ -10,8 +10,8 @@
 
     networking.hostName = "aura";
 
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
+    services.xserver.displayManager.sddm.enable = true;
+    services.xserver.desktopManager.plasma5.enable = true;
 
     users.users.w = {
         isNormalUser = true;
@@ -21,7 +21,6 @@
 
     environment.systemPackages = with pkgs; [
         git
-        gnome.gnome-tweaks
         neofetch
         pcmanfm
         vscode
@@ -30,6 +29,18 @@
     services.openssh.enable = true;
 
     programs.steam.enable = true;
+
+    fonts.packages = with pkgs; [
+        cantarell-fonts
+        noto-fonts
+        noto-fonts-cjk
+        noto-fonts-emoji
+        fira-code
+        fira-code-symbols
+        cascadia-code
+        corefonts
+        vistafonts
+    ];
 
     home-manager.users.w = {
 
