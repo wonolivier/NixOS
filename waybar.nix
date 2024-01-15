@@ -15,7 +15,20 @@
 
                     modules-left = [ "hyprland/workspaces" ];
                     modules-center = [];
-                    modules-right = [ "tray" "battery" "clock" ];
+                    modules-right = [
+                        "tray"
+                        "backlight"
+                        "battery"
+                        "clock"
+                    ];
+
+                    battery = {
+                        format = "🔋 {capacity}%";
+                    };
+                    backlight = {
+                        device = "amdgpu_bl0";
+                        format = "💡 {percent}%";
+                    };
                 };
             };
 
@@ -33,6 +46,8 @@
                 color: #FFF;
             }
 
+            #tray,
+            #backlight,
             #battery,
             #clock {
                 margin: 0 5px;

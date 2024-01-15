@@ -10,6 +10,7 @@
     programs.hyprland.enable = true;
 
     environment.systemPackages = with pkgs; [
+        brightnessctl
         swaybg
     ];
 
@@ -126,6 +127,11 @@
                             "4" = "apostrophe";
                         }
                 );
+
+                binde = [
+                    ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+                    ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+                ];
 
                 bindm = [
                     "$mod, mouse:272, movewindow"
