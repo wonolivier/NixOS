@@ -8,7 +8,8 @@
             enable = true;
             settings = {
                 main = {
-                    font = "Source Code Pro:size=10";
+                    font = "Cascadia Code:size=12";
+                    pad = "5x5";
                 };
                 colors = {
                     alpha = 0.9;
