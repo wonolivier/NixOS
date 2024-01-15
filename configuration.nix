@@ -20,6 +20,7 @@
     };
 
     environment.systemPackages = with pkgs; [
+        btop
         gammastep
         git
         neofetch
