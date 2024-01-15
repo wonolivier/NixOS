@@ -29,6 +29,7 @@
 
     services.openssh.enable = true;
 
+    programs.nm-applet.enable = true;
     programs.steam.enable = true;
 
     fonts.packages = with pkgs; [
